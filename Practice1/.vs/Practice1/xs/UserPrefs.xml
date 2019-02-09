@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{E6F3BCDA-3F63-89C3-8B17-47D431E266B0}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/characterMovement.cs">
+    <Files>
+      <File FileName="Assets/Scripts/characterMovement.cs" Line="44" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
