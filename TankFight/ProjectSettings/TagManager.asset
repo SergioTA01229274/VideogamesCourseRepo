@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - DefaultGround
-  - Brick
-  - Wall
-  - Border
-  - Player2
+  - Tank1
+  - Tank2
   layers:
   - Default
   - TransparentFX
@@ -19,13 +16,13 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - Brick
+  - Ground
+  - Tank
+  - Projectile
+  - Cannon
+  - OffLimits
   - 
   - 
   - 

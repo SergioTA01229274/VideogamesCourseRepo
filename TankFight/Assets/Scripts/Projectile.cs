@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.up * initialForce, ForceMode.Impulse);
+
     }
 
     // Update is called once per frame
@@ -19,14 +20,29 @@ public class Projectile : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        { 
-            Destroy(gameObject, 0.01f);
+    { 
+        if (collision.gameObject.layer == 10)
+        {
+           
+            Destroy(collision.gameObject, 0.001f);
+            Destroy(gameObject, 0.001f);
+        }else if (collision.gameObject.layer == 9)
+        {
+            Destroy(gameObject, 0.001f);
         }
-        else if(collision.gameObject.tag == "Brick"){
-            print("Is a brick");
+        else if (collision.gameObject.layer == 11)
+        {
+            Destroy(gameObject, 0.001f);
         }
-
+        else if (collision.gameObject.layer == 12)
+        {
+            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+            rb.AddExplosionForce(7000, Vector3.zero, 10);
+            Destroy(gameObject, 0.001f);
+        }
+        else if (collision.gameObject.layer == 15)
+        {
+            Destroy(gameObject, 0.001f);
+        }
     }
 }

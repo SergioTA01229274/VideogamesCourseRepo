@@ -4,48 +4,60 @@ using UnityEngine;
 
 public class Player1 : MonoBehaviour
 {
-
-
     public int speed;
-    private bool isMyTurn;
-    public GameObject projectile, pivot, adversary;
+    public GameObject projectile, pivot;
+    public int life;
+    private bool turn;
 
     void Start()
     {
-        isMyTurn = true;
+        this.life = 4;
+       
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if (this.getIsMyTurn() == true)
+        if (this.getTurn())
         {
+
             float horizontalAxis = Input.GetAxis("Horizontal");
             transform.Translate(speed * horizontalAxis * Time.deltaTime, 0, 0, Space.World);
-        }
 
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            this.pivot.transform.Rotate(Vector3.left * 100f * Time.deltaTime);
-        }else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            this.pivot.transform.Rotate(Vector3.left * -100f * Time.deltaTime);
-        }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                this.pivot.transform.Rotate(Vector3.left * 100f * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                this.pivot.transform.Rotate(Vector3.left * -100f * Time.deltaTime);
+            }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(projectile);
         }
-
     }
 
-    public void setIsMyTurn()
+
+    public void OnCollisionEnter(Collision collision)
     {
-        isMyTurn = !isMyTurn;
+        if (collision.gameObject.layer == 13)
+        {
+            Destroy(collision.gameObject, 0.0001f);
+            this.life--;
+
+        }
+        else if (collision.gameObject.layer == 15)
+        {
+            print("out");
+            Destroy(gameObject, 0.0001f);
+            this.life = 0;
+        }
     }
-    public bool getIsMyTurn()
+    public void setTurn(bool instruction)
     {
-        return isMyTurn;
+        this.turn = instruction;
+    }
+
+    public bool getTurn()
+    {
+        return this.turn;
     }
 }
