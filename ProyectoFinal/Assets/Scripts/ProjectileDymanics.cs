@@ -22,8 +22,8 @@ public class ProjectileDymanics : MonoBehaviour
         if (collision.gameObject.layer == 10)
         {
             Rigidbody EnemyRB = collision.gameObject.GetComponent<Rigidbody>();
-            EnemyRB.AddExplosionForce(1900000, Vector3.zero, 10);
-            Destroy(gameObject, 0.001f);
+            EnemyRB.AddExplosionForce(8500000, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), 10);
+            Destroy(gameObject, 0.01f);
         }else if (collision.gameObject.layer == 0)
         {
             Destroy(gameObject, 0.001f);
