@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player1 : MonoBehaviour
 {
     public int speed;
-    public GameObject projectile, pivot;
+    public GameObject pivot;
     public int life;
     private bool turn;
 
