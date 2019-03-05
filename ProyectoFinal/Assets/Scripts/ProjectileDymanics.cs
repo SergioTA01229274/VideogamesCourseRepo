@@ -6,6 +6,7 @@ public class ProjectileDymanics : MonoBehaviour
 {
     private Rigidbody rb;
     public float initialForce;
+    public GameObject explosion;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -19,6 +20,8 @@ public class ProjectileDymanics : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        var g = Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(g.gameObject, 1.9f);
         if (collision.gameObject.layer == 10)
         {
             Rigidbody EnemyRB = collision.gameObject.GetComponent<Rigidbody>();
@@ -29,5 +32,6 @@ public class ProjectileDymanics : MonoBehaviour
             Destroy(gameObject);
 
         }
+        
     }
 }

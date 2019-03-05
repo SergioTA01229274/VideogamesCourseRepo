@@ -56,6 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialForce: 7000
+  explosion: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
 --- !u!23 &452905162
 MeshRenderer:
   m_ObjectHideFlags: 0
