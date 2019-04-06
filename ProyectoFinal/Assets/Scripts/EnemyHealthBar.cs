@@ -15,4 +15,8 @@ public class EnemyHealthBar : MonoBehaviour
     {
         transform.LookAt(player.transform);
     }
+    public void setPlayer(GameObject character)
+    {
+        player = character;
+    }
 }
