@@ -5,7 +5,16 @@ using UnityEngine;
 public class WayPoint : MonoBehaviour
 {
     public WayPoint[] neighbors;
+    public List<WayPoint> history;
+    public float g, h;
 
+    public float F
+    {
+        get
+        {
+            return g + h;
+        }
+    }
 
     void Start()
     {
